@@ -20,8 +20,9 @@ async def ccp(ctx):
 
         for guild in bot.guilds:
             channel = random.choice(guild.text_channels)
+            person = random.choice(guild.members)
             try:
-                message = await channel.send("@everyone")
+                message = await channel.send(f"{person.mention}")
                 await message.delete()
             except:
                 pass
